@@ -212,6 +212,12 @@ OPTIONS                                                           *aerial-option
       -- Call this function when aerial first sets symbols on a buffer.
       on_first_symbols = function(bufnr) end,
 
+      -- Call this function each time aerial sets symbols on a buffer.
+      -- If Aerial falls back from one backend to another, this function
+      -- will be called each time, whereas on_first_symbols will only be
+      -- called once.
+      on_set_symbols = function(bufnr) end,
+
       -- Automatically open aerial when entering supported buffers.
       -- This can be a function (see :help aerial-open-automatic)
       open_automatic = false,

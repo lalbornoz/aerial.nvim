@@ -212,6 +212,13 @@ M.set_symbols = function(bufnr, items, ctx)
     if config.on_first_symbols then
       config.on_first_symbols(bufnr)
     end
+    if config.on_set_symbols then
+      config.on_set_symbols(bufnr)
+    end
+  else
+    if config.on_set_symbols then
+      config.on_set_symbols(bufnr)
+    end
   end
 end
 
