@@ -391,7 +391,6 @@ require("aerial").setup({
   link_folds_to_tree = false,
 
   -- Fold code when you open/collapse symbols in the tree.
-  -- Only works when manage_folds = true
   link_tree_to_folds = true,
 
   -- Set default symbol icons to use patched font icons (see https://www.nerdfonts.com/)

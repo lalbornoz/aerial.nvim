@@ -134,10 +134,10 @@ end
 ---@param bufnr nil|integer
 ---@param level integer 0 is all closed, use 99 to open all
 M.set_collapse_level = function(bufnr, level)
-  bufnr = util.get_buffers(bufnr or 0)
-  if not bufnr or not data.has_symbols(bufnr) then
-    return
-  end
+  --bufnr = util.get_buffers(bufnr or 0)
+  --if not bufnr or not data.has_symbols(bufnr) then
+  --  return
+  --end
   local bufdata = data.get_or_create(bufnr)
   level = bufdata:set_fold_level(level)
   if config.link_tree_to_folds then
@@ -208,6 +208,7 @@ M.close_all = function(bufnr)
     return
   end
   data.get_or_create(bufnr):clear_collapsed()
+  print(bufnr)
   M.set_collapse_level(bufnr, 0)
 end
 
